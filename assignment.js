@@ -13,6 +13,9 @@ function budgetCalculator(watch, mobile, laptop) {
     var perWatchPrice = 50;
     var perMobilePrice = 100;
     var perLaptopPrice = 500;
+    if (watch, mobile, laptop < 0) {
+        return ('Negative value are not allow');
+    }
     var totalPrice = (perWatchPrice * watch) + (perMobilePrice * mobile) + (perLaptopPrice * laptop);
     return totalPrice;
 }
@@ -25,13 +28,31 @@ function hotelCost(days) {
         return ('Zero and Negative value are not allow');
     }
     if (days <= 10) {
-        return firstTenDays * days;
+        var totalCost = firstTenDays * days;
     } else if (days > 10 && days <= 20) {
-        return ((firstTenDays * 10) + (secondTenDays * days));
-    } else if (days > 20) {
-        return twentyDaysMore * days;
+        totalCost = firstTenDays * 10;
+        days -= 10;
+        totalCost += secondTenDays * days;
+    } else {
+        totalCost = 10 * 100;
+        days -= 10;
+        totalCost += 10 * 80;
+        days -= 10;
+        totalCost += twentyDaysMore * days;
     }
-    var totalCost = firstTenDays + secondTenDays + twentyDaysMore;
     return totalCost;
 }
-//console.log(hotelCost(12));
+//problem-4: Mega Friend
+function megaFriend(friendName) {
+    var nameLength = 0;
+    var megaName = '';
+    for (var i = 0; i < friendName.length; i++) {
+        var element = friendName[i];
+        if (element.length > nameLength) {
+            nameLength = element.length;
+            megaName = element;
+        }
+    }
+    return megaName;
+}
+
