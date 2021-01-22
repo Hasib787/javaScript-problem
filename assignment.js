@@ -55,4 +55,3 @@ function megaFriend(friendName) {
     }
     return megaName;
 }
-
