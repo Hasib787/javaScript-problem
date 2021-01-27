@@ -13,9 +13,9 @@ function budgetCalculator(watch, mobile, laptop) {
     var perWatchPrice = 50;
     var perMobilePrice = 100;
     var perLaptopPrice = 500;
-    if (watch, mobile, laptop < 0) {
+    if (watch < 0 || mobile < 0 || laptop < 0) {
         return ('Negative value are not allow');
-    }
+    } 
     var totalPrice = (perWatchPrice * watch) + (perMobilePrice * mobile) + (perLaptopPrice * laptop);
     return totalPrice;
 }
